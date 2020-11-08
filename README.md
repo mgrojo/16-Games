@@ -1,10 +1,19 @@
-# 16-Games in C++/SFML
+# 16 Bilingual Games in Ada and C++ using SFML
 
-16 Games developed in C++ and SFML library by Russian YouTuber "FamTrinli".
+16 Games originally developed in C++ and SFML library by Russian YouTuber "[FamTrinli](https://www.youtube.com/playlist?list=PLB_ibvUSN7mzUffhiay5g5GUHyJRO4DYr)".
 
-I like the fact that most games are coded in a single file, aren't hard to grasp and are entertaining. They are a good playground to play with the SFML library and a showcase on how easy it can be to get some simple game idea working.
+We like the fact that most games are coded in a single file, aren't hard to grasp and are entertaining. They are a good playground to play with the SFML library and a showcase on how easy it can be to get some simple game idea working.
 
-I added CMake support to ease the building process of the 16 games under Windows and other platforms (GNU/Linux distros, macOS).
+## Ada
+
+I am porting the games to Ada 2012 in order to test the binding to
+SFML: [ASFML](https://github.com/mgrojo/ASFML).
+
+To build the Ada version, clone ASFML and the same directory level as
+16-Games, enter each directory and run `gprbuild` or open the GPR file using GNAT Studio.
+
+## C++
+embeddedmz added CMake support to ease the building process of the 16 games under Windows and other platforms (GNU/Linux distros, macOS).
 
 "vcpkg" can be used under Windows to install the following dependencies (watch out for the triplet parameter x86/x64) :
 - sfml (Ubuntu : sudo apt install libsfml-dev)
