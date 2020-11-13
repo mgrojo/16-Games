@@ -52,6 +52,8 @@ begin
 
    RandomMines.Reset (generator);
 
+   RenderWindow.setFramerateLimit(app, 50);
+
    t := Texture.createFromFile("images/tiles.jpg");
    Sprite.setTexture(s, t);
 
