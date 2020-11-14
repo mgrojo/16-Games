@@ -1,5 +1,4 @@
 with Sf.Graphics.RenderWindow;
-with Sf.Graphics.Color;
 with Sf.Graphics.Texture;
 with Sf.Graphics.Sprite;
 
@@ -8,8 +7,6 @@ with Sf.Window.Event;
 with Sf.Window.Keyboard;
 
 with Sf.System.Vector2;
-with Sf.System.Clock;
-with Sf.System.Time;
 
 with Ada.Numerics.Discrete_Random;
 

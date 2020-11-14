@@ -2,7 +2,6 @@ with Sf.Graphics.RenderWindow;
 with Sf.Graphics.Color;
 with Sf.Graphics.Texture;
 with Sf.Graphics.Sprite;
-with Sf.Graphics.Rect;
 
 with Sf.Window.Window;
 with Sf.Window.Event;
@@ -15,8 +14,6 @@ with Sf.System.Time;
 with Ada.Numerics.Discrete_Random;
 
 procedure Snake is
-
-   use type Sf.Window.Event.sfEventType;
 
    use Sf.Graphics;
    use Sf.Window;
