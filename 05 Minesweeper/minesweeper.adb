@@ -14,7 +14,7 @@ with Sf.System.Time;
 with Ada.Numerics.Discrete_Random;
 
 procedure Minesweeper is
-    use type Sf.Window.Event.sfEventType;
+   use type Sf.Window.Event.sfEventType;
 
    use Sf.Graphics;
    use Sf.Window;
@@ -51,8 +51,6 @@ procedure Minesweeper is
 begin
 
    RandomMines.Reset (generator);
-
-   RenderWindow.setFramerateLimit(app, 50);
 
    t := Texture.createFromFile("images/tiles.jpg");
    Sprite.setTexture(s, t);
