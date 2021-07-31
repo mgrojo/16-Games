@@ -60,7 +60,7 @@ struct Line
     s.setScale(destW/w,destH/h);
     s.setPosition(destX, destY);
     app.draw(s);
-    }
+  }
 };
 
 
@@ -120,58 +120,58 @@ int main()
                 app.close();
         }
 
-  int speed=0;
+        int speed=0;
 
-  if (Keyboard::isKeyPressed(Keyboard::Right)) playerX+=0.1;
-  if (Keyboard::isKeyPressed(Keyboard::Left)) playerX-=0.1;
-  if (Keyboard::isKeyPressed(Keyboard::Up)) speed=200;
-  if (Keyboard::isKeyPressed(Keyboard::Down)) speed=-200;
-  if (Keyboard::isKeyPressed(Keyboard::Tab)) speed*=3;
-  if (Keyboard::isKeyPressed(Keyboard::W)) H+=100;
-  if (Keyboard::isKeyPressed(Keyboard::S)) H-=100;
+        if (Keyboard::isKeyPressed(Keyboard::Right)) playerX+=0.1;
+        if (Keyboard::isKeyPressed(Keyboard::Left)) playerX-=0.1;
+        if (Keyboard::isKeyPressed(Keyboard::Up)) speed=200;
+        if (Keyboard::isKeyPressed(Keyboard::Down)) speed=-200;
+        if (Keyboard::isKeyPressed(Keyboard::Tab)) speed*=3;
+        if (Keyboard::isKeyPressed(Keyboard::W)) H+=100;
+        if (Keyboard::isKeyPressed(Keyboard::S)) H-=100;
 
-  pos+=speed;
-  while (pos >= N*segL) pos-=N*segL;
-  while (pos < 0) pos += N*segL;
+        pos+=speed;
+        while (pos >= N*segL) pos-=N*segL;
+        while (pos < 0) pos += N*segL;
 
-  app.clear(Color(105,205,4));
-  app.draw(sBackground);
-  int startPos = pos/segL;
-  int camH = lines[startPos].y + H;
-  if (speed>0) sBackground.move(-lines[startPos].curve*2,0);
-  if (speed<0) sBackground.move( lines[startPos].curve*2,0);
+        app.clear(Color(105,205,4));
+        app.draw(sBackground);
+        int startPos = pos/segL;
+        int camH = lines[startPos].y + H;
+        if (speed>0) sBackground.move(-lines[startPos].curve*2,0);
+        if (speed<0) sBackground.move( lines[startPos].curve*2,0);
 
-  int maxy = height;
-  float x=0,dx=0;
+        int maxy = height;
+        float x=0,dx=0;
 
-  ///////draw road////////
-  for(int n = startPos; n<startPos+300; n++)  
-   {
-    Line &l = lines[n%N];
-    l.project(playerX*roadW-x, camH, startPos*segL - (n>=N?N*segL:0));
-    x+=dx;
-    dx+=l.curve;
+        ///////draw road////////
+        for(int n = startPos; n<startPos+300; n++)
+        {
+            Line &l = lines[n%N];
+            l.project(playerX*roadW-x, camH, startPos*segL - (n>=N?N*segL:0));
+            x+=dx;
+            dx+=l.curve;
 
-    l.clip=maxy;
-    if (l.Y>=maxy) continue;
-    maxy = l.Y;
+            l.clip=maxy;
+            if (l.Y>=maxy) continue;
+            maxy = l.Y;
 
-    Color grass  = (n/3)%2?Color(16,200,16):Color(0,154,0);
-    Color rumble = (n/3)%2?Color(255,255,255):Color(0,0,0);
-    Color road   = (n/3)%2?Color(107,107,107):Color(105,105,105);
+            Color grass  = (n/3)%2?Color(16,200,16):Color(0,154,0);
+            Color rumble = (n/3)%2?Color(255,255,255):Color(0,0,0);
+            Color road   = (n/3)%2?Color(107,107,107):Color(105,105,105);
 
-    Line p = lines[(n-1)%N]; //previous line
+            Line p = lines[(n-1)%N]; //previous line
 
-    drawQuad(app, grass, 0, p.Y, width, 0, l.Y, width);
-    drawQuad(app, rumble,p.X, p.Y, p.W*1.2, l.X, l.Y, l.W*1.2);
-    drawQuad(app, road,  p.X, p.Y, p.W, l.X, l.Y, l.W);
-   }
+            drawQuad(app, grass, 0, p.Y, width, 0, l.Y, width);
+            drawQuad(app, rumble,p.X, p.Y, p.W*1.2, l.X, l.Y, l.W*1.2);
+            drawQuad(app, road,  p.X, p.Y, p.W, l.X, l.Y, l.W);
+        }
 
-    ////////draw objects////////
-    for(int n=startPos+300; n>startPos; n--)
-      lines[n%N].drawSprite(app);
+        ////////draw objects////////
+        for(int n=startPos+300; n>startPos; n--)
+          lines[n%N].drawSprite(app);
 
-    app.display();
+        app.display();
     }
 
     return 0;
