@@ -3,7 +3,6 @@ with Sf.Graphics.Color;
 with Sf.Graphics.Texture;
 with Sf.Graphics.Sprite;
 
-with Sf.Window.Window;
 with Sf.Window.Event;
 with Sf.Window.Keyboard;
 
@@ -46,7 +45,7 @@ procedure Snake is
    dir : tDir := Right;
 
    timer : Float := 0.0;
-   tick : Float := 0.1;
+   tick : constant Float := 0.1;
    clock1 : sfClock_Ptr := Clock.create;
    num : sfInt32 := 4;
 

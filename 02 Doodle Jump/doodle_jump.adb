@@ -2,7 +2,6 @@ with Sf.Graphics.RenderWindow;
 with Sf.Graphics.Texture;
 with Sf.Graphics.Sprite;
 
-with Sf.Window.Window;
 with Sf.Window.Event;
 with Sf.Window.Keyboard;
 
@@ -41,7 +40,7 @@ procedure Doodle_Jump is
    platforms : array (sfInt32 range 0 .. 9) of Vector2.sfVector2i := (others => (0, 0));
    x, y : sfInt32 := 100;
    h : constant := 200;
-   dx, dy : Float := 0.0;
+   dy : Float := 0.0;
 
 begin
 

@@ -2,14 +2,11 @@ with Sf.Graphics.RenderWindow;
 with Sf.Graphics.Color;
 with Sf.Graphics.Texture;
 with Sf.Graphics.Sprite;
-with Sf.Graphics.Rect;
 
-with Sf.Window.Window;
 with Sf.Window.Event;
 with Sf.Window.Mouse;
 
 with Sf.System.Vector2;
-with Sf.System.Time;
 
 with Ada.Numerics.Discrete_Random;
 
@@ -41,7 +38,8 @@ procedure Minesweeper is
    grid : tGrid := (others => (others => 0));
    sgrid : tGrid := (others => (others => Covered)); -- For showing
 
-   app : sfRenderWindow_Ptr := RenderWindow.create((Side * w, Side * w, 32), "Minesweeper!");
+   app : sfRenderWindow_Ptr :=
+     RenderWindow.create((Side * w, Side * w, 32), "Minesweeper!");
    e : Event.sfEvent;
    t : sfTexture_Ptr;
    s : sfSprite_Ptr := Sprite.create;
@@ -106,7 +104,7 @@ begin
 
             when Event.sfEvtMouseButtonPressed =>
 
-               case Mouse.sfMouseButton(e.mouseButton.button) is
+               case e.mouseButton.button is
                   when Mouse.sfMouseLeft =>
                      sgrid(x, y) := grid(x, y);
                   when Mouse.sfMouseRight =>

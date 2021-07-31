@@ -3,13 +3,11 @@ with Sf.Graphics.Sprite;
 with Sf.Graphics.RenderWindow;
 with Sf.Graphics.Color;
 
-with Sf.Window.Window;
 with Sf.Window.Event;
 with Sf.Window.Mouse;
 
 with Sf.System.Vector2;
 
-with Ada.Numerics.Discrete_Random;
 with Ada.Text_IO;
 
 procedure Fifteen_Puzzle is
@@ -54,7 +52,7 @@ procedure Fifteen_Puzzle is
 
       Sprite.move(sprites(nSquares), (-deltaX * w, -deltaY * w));
 
-      while step < Float(w) loop
+      while step < w loop
          step := step + speed;
          Sprite.move(sprites(n), (speed * deltaX, speed * deltaY));
          RenderWindow.drawSprite(app, sprites(nSquares));
@@ -70,8 +68,8 @@ procedure Fifteen_Puzzle is
 begin
 
    if size.x /= size.y then
-      Ada.Text_IO.Put_Line("Image must be a square: " &size.x'image & "x"&
-                          size.y'image);
+      Ada.Text_IO.Put_Line("Image must be a square: " & size.x'Image & "x"&
+                          size.y'Image);
       return;
    end if;
 
@@ -99,7 +97,7 @@ begin
                RenderWindow.Close (app);
 
             when Event.sfEvtMouseButtonPressed =>
-               if Mouse.sfMouseButton(e.mouseButton.button) = Mouse.sfMouseLeft then
+               if e.mouseButton.button = Mouse.sfMouseLeft then
 
                   pos := RenderWindow.Mouse.getPosition(app);
                   x := Integer(pos.x) / width + 1;

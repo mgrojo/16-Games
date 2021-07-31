@@ -1,12 +1,9 @@
 with Sf.Graphics.RenderWindow; use Sf, Sf.Graphics, Sf.Graphics.RenderWindow;
 with Sf.Graphics.Texture; use Sf.Graphics.Texture;
 with Sf.Graphics.Sprite; use Sf.Graphics.Sprite;
-with Sf.Graphics.Color; use Sf.Graphics.Color;
 with Sf.Graphics.Rect; use Sf.Graphics.Rect;
 
 with Sf.System.Vector2; use Sf.System.Vector2;
-with Sf.Window.VideoMode; use Sf.Window.VideoMode;
-with Sf.Window.Window; use Sf.Window.Window;
 with Sf.Window.Event; use Sf.Window.Event;
 with Sf.Window.Keyboard; use Sf.Window.Keyboard;
 
@@ -45,7 +42,7 @@ procedure Arkanoid is
 
    dx : Float := 6.0; dy : Float := 5.0;
    b : sfVector2f;
-   x, y : Float := 300.0;
+
 begin
 
    RandomY.Reset (generator);

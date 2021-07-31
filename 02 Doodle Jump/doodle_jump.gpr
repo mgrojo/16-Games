@@ -9,4 +9,11 @@ project Doodle_Jump is
    for Main use ("doodle_jump.adb");
    for Exec_Dir use ".";
 
+   package Compiler is
+      for Default_Switches ("Ada") use
+        ("-g",
+         "-gnatwa",  -- All warnings
+         "-gnatVa");  -- All validity checks
+   end Compiler;
+
 end Doodle_Jump;

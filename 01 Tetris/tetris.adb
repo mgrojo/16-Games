@@ -2,9 +2,7 @@ with Sf.Graphics.RenderWindow;
 with Sf.Graphics.Color;
 with Sf.Graphics.Texture;
 with Sf.Graphics.Sprite;
-with Sf.Graphics.Rect;
 
-with Sf.Window.Window;
 with Sf.Window.Event;
 with Sf.Window.Keyboard;
 
@@ -38,7 +36,7 @@ procedure Tetris is
    type tPoints is array (tSquares) of Vector2.sfVector2i;
    a, b : tPoints := (others => (x => 0, y => 0));
 
-   figures : array (tPieces, tSquares) of sfInt32 :=
+   figures : constant array (tPieces, tSquares) of sfInt32 :=
      (
       0 => (1,3,5,7), -- I
       1 => (2,4,5,7), -- Z
@@ -88,7 +86,7 @@ procedure Tetris is
       x, y : sfInt32;
 
       -- Center of rotation:
-      center : Vector2.sfVector2i := a(1);
+      center : constant Vector2.sfVector2i := a(1);
    begin
       if rotate then
          for i in tSquares loop
@@ -117,7 +115,7 @@ procedure Tetris is
    end move;
 
    procedure doTick is
-      piece : tPieces := RandomPiece.Random(generator);
+      piece : constant tPieces := RandomPiece.Random(generator);
    begin
       if timer > tick then
          timer := 0.0;

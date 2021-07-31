@@ -3,17 +3,13 @@ with Sf.Graphics.Sprite;
 with Sf.Graphics.RenderWindow;
 with Sf.Graphics.Color;
 
-with Sf.Window.Window;
 with Sf.Window.VideoMode;
 with Sf.Window.Event;
-with Sf.Window.Mouse;
 with Sf.Window.Keyboard;
 
 with Sf.System.Vector2;
 
-with Ada.Numerics.Discrete_Random;
 with Ada.Numerics.Elementary_Functions; use Ada.Numerics.Elementary_Functions;
-with Ada.Text_IO;
 
 procedure Racing is
 
@@ -25,15 +21,15 @@ procedure Racing is
    num : constant := 8;
    dim : constant := 2;
 
-   points : array (0 .. num - 1, 0 .. dim - 1) of Float :=
-     ((300.0,   610.0),
+   points : constant array (0 .. num - 1, 0 .. dim - 1) of Float :=
+     (( 300.0,  610.0),
       (1270.0,  430.0),
       (1380.0, 2380.0),
       (1900.0, 2460.0),
       (1970.0, 1700.0),
       (2550.0, 1680.0),
       (2560.0, 3150.0),
-      (500.0,  3300.0));
+      ( 500.0, 3300.0));
 
    type Car is
       record
@@ -99,7 +95,7 @@ procedure Racing is
 
    numCars : constant := 5;
    cars : array (0 .. numCars - 1) of Car;
-   colors : array (cars'range) of Color.sfColor :=
+   colors : constant array (cars'range) of Color.sfColor :=
      (Color.sfRed, Color.sfGreen, Color.sfMagenta, Color.sfBlue, Color.sfWhite);
 
 begin
