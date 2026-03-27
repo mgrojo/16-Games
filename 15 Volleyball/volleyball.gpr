@@ -1,4 +1,4 @@
-with "../../ASFML/asfml.gpr";
+with "../ASFML/asfml.gpr";
 with "Ada_Box2d/library/box2d.gpr";
 
 project Volleyball is

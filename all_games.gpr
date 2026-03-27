@@ -1,0 +1,21 @@
+aggregate project All_Games is
+
+   for Project_Files use
+     ("01 Tetris/tetris.gpr",
+      "02 Doodle Jump/doodle_jump.gpr",
+      "03 Arkanoid/arkanoid.gpr",
+      "04 Snake/snake.gpr",
+      "05 Minesweeper/minesweeper.gpr",
+      "06 Fifteen-Puzzle/fifteen_puzzle.gpr",
+      "07 Racing (Top Down)/racing.gpr",
+      "08 Outrun/outrun.gpr",
+      "09 Xonix/xonix.gpr",
+      "10 Bejeweled/bejeweled.gpr",
+      "11 NetWalk (Pipe Puzzle)/netwalk.gpr",
+      "12 Mahjong Solitaire/mahjong.gpr",
+      "13 Tron/tron.gpr",
+      "14 Chess/chess.gpr",
+      "15 Volleyball/volleyball.gpr",
+      "16 Asteroids/asteroids.gpr");
+
+end All_Games;

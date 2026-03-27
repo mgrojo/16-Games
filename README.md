@@ -8,9 +8,13 @@ We like the fact that most games are coded in a single file, aren't hard to gras
 
 In this fork, I have ported the games to Ada 2012 in order to test and showcase the binding to
 SFML: [ASFML](https://github.com/mgrojo/ASFML).
+The game `15 Volleyball` also depends on [Ada_Box2d](https://github.com/charlie5/Ada_Box2d).
 
-To build the Ada versions, clone ASFML at the same directory level as
-16-Games, enter each directory and run `gprbuild` or open the GPR file using GNAT Studio.
+To build the Ada versions:
+
+- Get the dependecies as submodules: `git submodule update --init`
+- Build everything at once: `gprbuild -P all_games.gpr`
+- Build an individual title: enter its directory and run `gprbuild -P <game>.gpr` or open the GPR file using GNAT Studio.
 
 ## C++
 [embeddedmz](https://github.com/embeddedmz/16-Games) added CMake support to ease the building process of the 16 games under Windows and other platforms (GNU/Linux distros, macOS).
@@ -20,8 +24,7 @@ To build the Ada versions, clone ASFML at the same directory level as
 - box2d (only for the game 15: Volleyball - Ubuntu: sudo apt install libsfml-dev)
 
 Youtuber "DeveloperPaul123" made a good [video about "vcpkg"](https://www.youtube.com/watch?v=9v1HrlSFBSM) and how it can be used with CMake.
-
-I recommend Windows users to use "vcpkg" when configuring the CMake project. This tool will automatically copy libraries DLLs in the build directories and you will be able to launch the games from Visual Studio.
+We recommend Windows users to use "vcpkg" when configuring the CMake project. This tool will automatically copy libraries DLLs in the build directories and you will be able to launch the games from Visual Studio.
 
 When launching a game outside Visual Studio, do not forget to move asset files/directories (e.g. images folder) in the same executable directory (or launch the game from the directory in which asset files and/or directories are located via the command line interpreter 'cmd.exe').
 

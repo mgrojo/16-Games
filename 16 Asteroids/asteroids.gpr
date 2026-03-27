@@ -1,4 +1,4 @@
-with "../../ASFML/asfml.gpr";
+with "../ASFML/asfml.gpr";
 
 project Asteroids is
 
