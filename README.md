@@ -6,7 +6,7 @@ We like the fact that most games are coded in a single file, aren't hard to gras
 
 ## Ada
 
-In this fork, I am porting the games to Ada 2012 in order to test and showcase the binding to
+In this fork, I have ported the games to Ada 2012 in order to test and showcase the binding to
 SFML: [ASFML](https://github.com/mgrojo/ASFML).
 
 To build the Ada versions, clone ASFML at the same directory level as
@@ -31,7 +31,6 @@ Compilation has been tested with:
 
 Upcoming changes:
 - Volleyball doesn't seem to work well on my Windows 8.1: game launches but is not playable (no players).
-- Make Game 14 (Chess) compilable under non-Windows platforms (for now use -DBUILD_CHESS=OFF when generating makefiles with CMake).
 - Completing some games if needed (e.g. missing Game Over in Tetris and Arkanoid).
 - Add Clang-format support.
 - Increase code readability/quality if needed (STL algos, smart pointers, small optimizations etc...).
