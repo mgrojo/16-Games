@@ -22,4 +22,4 @@ std::string getNextMove(std::string position)
 }
 
 
-#endif CONNECTOR_H
+#endif // CONNECTOR_H

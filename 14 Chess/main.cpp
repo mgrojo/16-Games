@@ -76,7 +76,7 @@ int main()
 {
     RenderWindow window(VideoMode(504, 504), "The Chess! (press SPACE)");
 
-    std::string engine_path = "./stockfish"; //NOTE: this transformes into a stockfish.exe on Windows, ./stockfish on Unix
+    std::string engine_path = "stockfish"; //NOTE: this transformes into a stockfish.exe on Windows, stockfish on Unix
     ConnectToEngine(engine_path.c_str());     
 
     Texture t1,t2;
